@@ -1,0 +1,26 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar__body__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1px;
+}
+
+.calendar__body__days__day__title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: #eee;
+}
+

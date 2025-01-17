@@ -1,0 +1,88 @@
+<main class="main">
+  <div class="appointment">
+    <app-header title="Appointment">
+      <button mat-raised-button routerLink="/calendar">Back to Calendar</button>
+    </app-header>
+    <div class="appointment__body">
+      <div class="appointment__body__form">
+        <form [formGroup]="appointmentForm" (ngSubmit)="addAppointment()">
+          <div>
+            <mat-form-field>
+              <mat-label>Title</mat-label>
+              <input matInput formControlName="title" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>Invitees</mat-label>
+              <mat-select formControlName="invitees">
+                <mat-option value="alice-smith">Alice Smith</mat-option>
+                <mat-option value="bob-johnson">Bob Johnson</mat-option>
+                <mat-option value="charlie-brown">Charlie Brown</mat-option>
+                <mat-option value="david-wilson">David Wilson</mat-option>
+                <mat-option value="emma-davis">Emma Davis</mat-option>
+                <mat-option value="frank-miller">Frank Miller</mat-option>
+                <mat-option value="grace-lee">Grace Lee</mat-option>
+                <mat-option value="henry-moore">Henry Moore</mat-option>
+                <mat-option value="isabella-taylor">Isabella Taylor</mat-option>
+                <mat-option value="jack-anderson">Jack Anderson</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>Location</mat-label>
+              <input matInput formControlName="location" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>Choose a date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="datePicker"
+                formControlName="date"
+              />
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="datePicker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #datePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>Pick a time</mat-label>
+              <input
+                matInput
+                [matTimepicker]="timePicker"
+                formControlName="time"
+              />
+              <mat-timepicker-toggle matIconSuffix [for]="timePicker" />
+              <mat-timepicker #timePicker />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>Description</mat-label>
+              <textarea
+                matInput
+                formControlName="description"
+                rows="10"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          <div class="appointment__body__form__actions">
+            <button
+              mat-flat-button
+              type="submit"
+              [disabled]="!appointmentForm.valid"
+            >
+              Create Appointment
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

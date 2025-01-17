@@ -1,0 +1,13 @@
+.calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.calendar__header__title {
+}
+
+.calendar__header__actions {
+}
